@@ -1,0 +1,25 @@
+using System.Management.Automation;
+using System.Management.Automation.Runspaces;
+using System.Text;
+using System;
+
+namespace Catch
+{
+public class Me
+{
+public void Please()
+{
+Runspace runSpace = RunspaceFactory.CreateRunspace();
+runSpace.Open();
+Pipeline pipeline = runSpace.CreatePipeline();
+string script = "ipconfig";
+pipeline.Commands.AddScript(script);
+var results = pipeline.Invoke();
+
+foreach (var item in results)
+{
+ Console.WriteLine(item);
+}
+}
+}
+}
