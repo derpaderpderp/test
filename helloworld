@@ -1,0 +1,13 @@
+using System;
+
+namespace Catch
+{
+public class Me
+{
+public void Please()
+{
+
+ Console.WriteLine("it works!");
+}
+}
+}
